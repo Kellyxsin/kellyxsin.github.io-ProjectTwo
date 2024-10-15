@@ -5,6 +5,10 @@
 }
 
 body {
-    background-color: #f0f0f0;
+    background-color: #70aacc;
     font-family: Arial, sans-serif;
+}
+
+.dino {
+    transform: rotate(33deg);
 }
