@@ -13,14 +13,16 @@ body {
     transform: rotate(33deg);
 }
 
-@keyframes introAnimate {
-    from {
-    background-color: #333333;
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    to {
-    background-color: white;
-       }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
 #oneState {
     animation-name: introAnimate;
