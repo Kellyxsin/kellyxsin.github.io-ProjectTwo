@@ -5,38 +5,48 @@
 }
 
 body {
-    background-color: #70aacc;
+    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.dino {
-    transform: rotate(33deg);
+.circle-text {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    transform: rotate(-45deg); /* Adjust the starting rotation */
 }
 
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.line {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: green;
+    font-size: 20px;
+    transform-origin: 50% 150px; /* Adjust based on radius */
 }
 
-#oneState {
-    animation-name: introAnimate;
-    animation-delay: 1s;
-    animation-direction: forwards;
-    animation-duration: 10s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-    animation-timing-function: ease-in;
-    }
-#oneState {
-    animation: introAnimate 1s forwards 10s forwards
-    infinite running ease-in;
-    }
-        
-    
+/* Setting up each line around the circle */
+.line:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.line:nth-child(2) {
+    transform: rotate(90deg);
+    color: blue; /* Alternate color */
+}
+
+.line:nth-child(3) {
+    transform: rotate(180deg);
+}
+
+.line:nth-child(4) {
+    transform: rotate(270deg);
+    color: blue; /* Alternate color */
+}
+
