@@ -5,70 +5,42 @@
 }
 
 body {
-    background-color: #70aacc;
+    background-color: #7e5221;
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
 }
 
-.circle-text {
-    position: relative;
-    text-align: center;
-}
-
-.circle-text p {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    transform-origin: center;
-    transition: transform 0.4s ease-in-out, font-size 0.4s ease-in-out;
-}
-
-/* Individual styling for each line */
 #HealtheWorld {
     top: 10%;
     font-size: 2.5em;
     transform: rotate(-10deg);
-    color: #32a852;
+    color: #38c55e;
 }
 
-#MakeitaBetterPlace {
+#MakeitaBetterPlace { 
     top: 30%;
     font-size: 2em;
     transform: rotate(-5deg);
-    color: #1e90ff;
+    color: #1787f7;
 }
 
 #Foryouandforme {
     top: 50%;
     font-size: 1.7em;
     transform: rotate(5deg);
-    color: #2e8b57;
+    color: #38c55e;  
 }
 
 #Andtheentirehumanrace {
     top: 70%;
     font-size: 1.4em;
     transform: rotate(10deg);
-    color: #4682b4;
+    color: #1787f7;
 }
 
-/* Hover effects */
-.circle-text p:hover {
-    transform: scale(1.2) rotate(0deg);
-    font-size: 2.5em;
-    color: #ff6347;
-}
-
-/* Animation to rotate the entire circle */
 @keyframes rotateText {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
-.circle-text {
-    animation: rotateText 20s infinite linear;
-}
-
