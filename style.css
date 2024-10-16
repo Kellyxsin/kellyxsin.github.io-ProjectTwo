@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #f0f0f0;
+    background-color: #70aacc;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -18,47 +18,57 @@ body {
     text-align: center;
 }
 
-.circle-text span {
-    display: block;
+.circle-text p {
     position: absolute;
+    width: 100%;
+    text-align: center;
     transform-origin: center;
-    color: #2e8b57; /* Change to your desired colors */
+    transition: transform 0.4s ease-in-out, font-size 0.4s ease-in-out;
 }
 
-.line1 {
-    font-size: 2em;
+/* Individual styling for each line */
+#HealtheWorld {
     top: 10%;
-    transform: rotate(10deg); /* Adjust angle */
+    font-size: 2.5em;
+    transform: rotate(-10deg);
+    color: #32a852;
 }
 
-.line2 {
-    font-size: 1.8em;
-    top: 25%;
-    transform: rotate(20deg);
+#MakeitaBetterPlace {
+    top: 30%;
+    font-size: 2em;
+    transform: rotate(-5deg);
     color: #1e90ff;
 }
 
-.line3 {
-    font-size: 1.6em;
-    top: 40%;
-    transform: rotate(30deg);
-    color: #32cd32;
+#Foryouandforme {
+    top: 50%;
+    font-size: 1.7em;
+    transform: rotate(5deg);
+    color: #2e8b57;
 }
 
-.line4 {
+#Andtheentirehumanrace {
+    top: 70%;
     font-size: 1.4em;
-    top: 55%;
-    transform: rotate(40deg);
+    transform: rotate(10deg);
     color: #4682b4;
 }
 
-/* Add animation, transition, and transformation as needed */
+/* Hover effects */
+.circle-text p:hover {
+    transform: scale(1.2) rotate(0deg);
+    font-size: 2.5em;
+    color: #ff6347;
+}
 
+/* Animation to rotate the entire circle */
 @keyframes rotateText {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-.circle-text span {
-    animation: rotateText 10s infinite linear;
+.circle-text {
+    animation: rotateText 20s infinite linear;
 }
+
