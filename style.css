@@ -7,7 +7,7 @@
 
 /* Styling the body */
 body {
-    background-color: #7e5221; /* Light brown background */
+    background-color: #a6743a; /* Light brown background */
     font-family: Arial, sans-serif;
     height: 100vh;
     overflow: hidden;
@@ -28,7 +28,7 @@ body {
 .text-line {
     font-size: 4vw;
     text-decoration: none;
-    color:#38c55e; /* Default green color */
+    color: #38c55e; /* Default green color */
     position: absolute;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
     transform-origin: center;
@@ -39,32 +39,35 @@ body {
 #HealtheWorld {
     top: 10%;
     left: 50%;
-    transform: translateX(-50%) rotate(-20deg);
     font-size: 4vw;
+    transform: translateX(-50%) rotate(-20deg);
     color: #38c55e; /* Green */
 }
 
-#MakeitaBetterPlace { 
+
+#MakeitaBetterPlace {
     top: 30%;
     left: 50%;
-    transform: translateX(-50%) rotate(-10deg);
     font-size: 3.5vw;
+    transform: translateX(-50%) rotate(-10deg);
     color: #1787f7; /* Blue */
 }
+
 
 #Foryouandforme {
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) rotate(10deg);
     font-size: 3vw;
-    color: #38c55e; /* Green */
+    transform: translateX(-50%) rotate(10deg);
+    color: #38c55e;  /* Green */
 }
+
 
 #Andtheentirehumanrace {
     top: 70%;
     left: 50%;
-    transform: translateX(-50%) rotate(20deg);
     font-size: 2.5vw;
+    transform: translateX(-50%) rotate(20deg);
     color: #1787f7; /* Blue */
 }
 
