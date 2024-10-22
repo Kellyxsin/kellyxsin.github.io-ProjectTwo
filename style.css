@@ -7,7 +7,8 @@
 
 /* Styling the body */
 body {
-    background-color: #a6743a; /* Light brown background */
+    background: linear-gradient(135deg, #a0c4ff, #71a0f0, #38c55e);
+    background-color: #7e5221; /* Light brown background */
     font-family: Arial, sans-serif;
     height: 100vh;
     overflow: hidden;
@@ -38,64 +39,76 @@ body {
     text-align: center;
     width: 100%;
     height: 100vh;
+    perspective: 1000px;
 }
 
 /* Styling the text links */
 .text-line {
     font-size: 4vw;
     text-decoration: none;
-    color: #38c55e; /* Default green color */
+    color:#38c55e; /* Default green color */
     position: absolute;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
     transform-origin: center;
     white-space: nowrap;
-    animation: float 3s infinite ease-in-out;
+    animation: float 3s infinite ease-in-out, rotateAround 10s linear infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes rotateAround {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(360deg); }
 }
 
 /* Creating a curved, globe-like effect */
 #HealtheWorld {
     top: 10%;
     left: 50%;
-    font-size: 4vw;
     transform: translateX(-50%) rotate(-20deg);
+    font-size: 4vw;
     color: #38c55e; /* Green */
 }
 
-
-#MakeitaBetterPlace {
+#MakeitaBetterPlace { 
     top: 30%;
     left: 50%;
-    font-size: 3.5vw;
     transform: translateX(-50%) rotate(-10deg);
+    font-size: 3.5vw;
     color: #1787f7; /* Blue */
 }
-
 
 #Foryouandforme {
     top: 50%;
     left: 50%;
-    font-size: 3vw;
     transform: translateX(-50%) rotate(10deg);
-    color: #38c55e;  /* Green */
+    font-size: 3vw;
+    color: #38c55e; /* Green */
 }
-
 
 #Andtheentirehumanrace {
     top: 70%;
     left: 50%;
-    font-size: 2.5vw;
     transform: translateX(-50%) rotate(20deg);
+    font-size: 2.5vw;
     color: #1787f7; /* Blue */
 }
 
 /* Hover effect */
 .text-line:hover {
-    transform: scale(1.1) translateX(-50%) rotate(20deg);
+    transform: scale(1.1) rotate(10deg);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
     color: #fff; /* Change to white on hover */
-    transition: transform 0.3s ease-in-out;    
+    transition: transform 0.3s ease-in-out;
+    animation: colorShift 1s infinite alternate;
 }
 
-@keyframes float {
-    0%, 100% { transform: translate(0); }
-    50% { transform: translate(-10px);}
+@keyframes colorShift {
+    0% { color: #38c55e; }
+    100% { color: #1787f7; }
 }
