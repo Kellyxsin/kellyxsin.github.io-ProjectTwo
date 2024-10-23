@@ -16,6 +16,15 @@ body {
     animation: fadeIn 1s ease-in-out;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
 @keyframes introAnimate {
     from {
     background-color: #333333;
@@ -70,13 +79,18 @@ body {
     text-decoration: none;
     color: #38c55e; /* Default green color */
     position: absolute;
-    transition: transform 0.5s ease-in-out, color 0.5s ease, opacity 0.5s ease;
+    transition: all 0.3s ease-in-out;
     transform-style: preserve-3d;
     transform-origin: center;
     backface-visibility: hidden;
     white-space: nowrap;
     animation: float 3s infinite ease-in-out;
     opacity: 0;
+}
+
+.text-line:focus {
+    transform: scale(1.1);
+    opacity: 0.5;
 }
 
 @keyframes rotateAround {
