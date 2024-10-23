@@ -28,18 +28,22 @@ body {
 @keyframes fadeIn {
     0% {
         opacity: 0;
+        transform: translateX(-50%) scale(0.8);
     }
     100% {
         opacity: 1;
+        transform: translateX(-50%) scale(1);
     }
 }
 
 @keyframes fadeOut {
     100% {
-      opacity: 1;
+      opacity: 0;
+      transform: translateX(-50%) scale(1.1);
     }
     0% {
-      opacity: 0;
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
     }
   }
 
@@ -66,7 +70,7 @@ body {
     text-decoration: none;
     color: #38c55e; /* Default green color */
     position: absolute;
-    transition: transform 0.3s ease-in-out, color 0.3s ease;
+    transition: transform 0.5s ease-in-out, color 0.5s ease, opacity 0.5s ease;
     transform-style: preserve-3d;
     transform-origin: center;
     backface-visibility: hidden;
@@ -87,7 +91,7 @@ body {
 
 /* Creating a curved, globe-like effect */
 #HealtheWorld {
-    animation: spacing;
+    animation: fadeIn 1s ease-in-out;
     animation-direction: alternate-reverse;
     animation-duration: 4s;
     top: 10%;
@@ -100,7 +104,7 @@ body {
 
 /* Creating a curved, globe-like effect */
 #MakeitaBetterPlace {
-    animation: forwards;
+    animation: fadeIn 1.2s ease-in-out;
     animation-direction: alternate;
     animation-duration: 4s;
     top: 30%;
@@ -112,7 +116,7 @@ body {
 
 /* Creating a curved, globe-like effect */
 #Foryouandforme {
-    animation: spacing;
+    animation: fadeIn 1.4s ease-in-out;
     animation-direction: alternate-reverse;
     animation-duration: 4s;
     top: 50%;
@@ -125,7 +129,7 @@ body {
 /* Creating a curved, globe-like effect */
 #Andtheentirehumanrace {
     top: 70%;
-    animation: forwards;
+    animation: fadeIn 1.6s ease-in-out;
     animation-direction: alternate;
     animation-duration: 4s;
     left: 50%;
@@ -138,9 +142,19 @@ body {
     transform: scale(1.1) skew(10deg, 0deg);
     color: #fff;
     transition: transform 0.3s ease-in-out;
+    opacity: 1;
 }
 
 @keyframes colorShift {
     0% { color:#38c55e; }
     100% { color:#1787f7; }
+}
+
+.text-line.active {
+    opacity: 1;
+}
+
+.text-line.inactive {
+    opacity: 0;
+    pointer-events: none;
 }
