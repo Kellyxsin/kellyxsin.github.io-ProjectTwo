@@ -1,14 +1,12 @@
-/* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Styling the body */
 body {
-    background: linear-gradient(135deg, #a0c4ff, #71a0f0, #38c55e);
-    background-color: #7e5221; /* Light brown background */
+    background: linear-gradient(135deg, #e7ac6a, #b17938, #efa552);
+    background-color: #d79f5f; /* Light brown background */
     font-family: Arial, sans-serif;
     height: 100vh;
     overflow: hidden;
@@ -18,6 +16,15 @@ body {
     animation: fadeIn 1s ease-in-out;
 }
 
+@keyframes introAnimate {
+    from {
+    background-color: #333333;
+    }
+    to {
+    background-color: white;
+       }
+    }
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -26,6 +33,15 @@ body {
         opacity: 1;
     }
 }
+
+@keyframes fadeOut {
+    100% {
+      opacity: 1;
+    }
+    0% {
+      opacity: 0;
+    }
+  }
 
 @media (max-width: 600px) {
     .text-line {
@@ -45,20 +61,18 @@ body {
 /* Styling the text links */
 .text-line {
     font-size: 4vw;
+    font-weight: 700;
+    text-transform: uppercase;
     text-decoration: none;
-    color:#38c55e; /* Default green color */
+    color: #38c55e; /* Default green color */
     position: absolute;
+    transition: transform 0.3s ease-in-out, color 0.3s ease;
     transform-style: preserve-3d;
-    backface-visibility: hidden;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
     transform-origin: center;
+    backface-visibility: hidden;
     white-space: nowrap;
-    animation: float 3s infinite ease-in-out, rotateAround 10s linear infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    animation: float 3s infinite ease-in-out;
+    opacity: 0;
 }
 
 @keyframes rotateAround {
@@ -66,49 +80,67 @@ body {
     100% { transform: translateX(-50%) rotate(360deg); }
 }
 
+@keyframes float {
+    0%, 100% { transform: translate(0); }
+    50% { transform: translate(-10px);}
+}
+
 /* Creating a curved, globe-like effect */
 #HealtheWorld {
+    animation: spacing;
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
     top: 10%;
     left: 50%;
-    transform: translateX(-50%) rotate(-20deg);
-    font-size: 4vw;
+    font-size: 5vw;
+    transform: translateX(-50%) rotate(-20deg) skew(-5deg, 0deg);
     color: #38c55e; /* Green */
+    opacity: 1;
 }
 
-#MakeitaBetterPlace { 
+/* Creating a curved, globe-like effect */
+#MakeitaBetterPlace {
+    animation: forwards;
+    animation-direction: alternate;
+    animation-duration: 4s;
     top: 30%;
     left: 50%;
-    transform: translateX(-50%) rotate(-10deg);
-    font-size: 3.5vw;
+    font-size: 4vw;
+    transform: translateX(-50%) rotate(-10deg) skew(-3deg, 0deg);
     color: #1787f7; /* Blue */
 }
 
+/* Creating a curved, globe-like effect */
 #Foryouandforme {
+    animation: spacing;
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) rotate(10deg);
-    font-size: 3vw;
-    color: #38c55e; /* Green */
+    font-size: 3.5vw;
+    transform: translateX(-50%) rotate(10deg) skew(3deg, 0deg);
+    color: #38c55e;  /* Green */
 }
 
+/* Creating a curved, globe-like effect */
 #Andtheentirehumanrace {
     top: 70%;
+    animation: forwards;
+    animation-direction: alternate;
+    animation-duration: 4s;
     left: 50%;
-    transform: translateX(-50%) rotate(20deg);
-    font-size: 2.5vw;
+    font-size: 3vw;
+    transform: translateX(-50%) rotate(20deg) skew(5deg, 0deg);
     color: #1787f7; /* Blue */
 }
 
-/* Hover effect */
 .text-line:hover {
-    transform: scale(1.1) rotate(10deg);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
-    color: #fff; /* Change to white on hover */
+    transform: scale(1.1) skew(10deg, 0deg);
+    color: #fff;
     transition: transform 0.3s ease-in-out;
-    animation: colorShift 1s infinite alternate;
 }
 
 @keyframes colorShift {
-    0% { color: #38c55e; }
-    100% { color: #1787f7; }
+    0% { color:#38c55e; }
+    100% { color:#1787f7; }
 }
